@@ -71,24 +71,52 @@ class object:
         '''Check symmetric'''
         for i in range(1, self.size):
             for j in range(1, i):
-                if(not self.matrix[i][j] and not self.matrix[i][j]):
+                if((self.matrix[i][j] and not self.matrix[j][i]) or (not self.matrix[i][j] and self.matrix[j][i])):
                     return False
         return True
 
     def transitive(self):
-        '''Check transitivity of the output'''
-        for a, b in range(1,self.size):
-            print(1)
-            # print(f"{a}, {b}")
-        #     for c, d in self.matrix:
-        #         if b == c and ((a, d) not in self.matrix):
-        #             return False
-        # return True
+        '''Check transitivity of the program using indices'''
+        for a in range(1,self.size):
+            for b in range(1, self.size):
+                if (not self.matrix[a][b]): #A & B
+                    continue
+
+                for c in range(1,self.size):
+                    if(not self.matrix[b][c]): # B & C
+                        continue
+
+                    if (not self.matrix[a][c]):  # A & C
+                        return False
+
+        return True
 
     def equivalence(self):
         '''Check equivalence'''
-        pass
+        if not (self.reflexive() and self.symmetric() and self.transitive()):
+            return False
+        return True
 
+    def printpartitions(self):
+        usedset = []
+
+        setlist = [set() for i in range(1, self.size)]
+
+        counter = 0
+
+        for i in range(1,self.size):
+            for j in range(1,self.size):
+                if(self.matrix[i][j] and j not in usedset):
+                    counter += 1
+                    usedset.append(j)
+                    setlist[i-1].add(j)
+
+        if (counter < 10):
+            for i in range(1,self.size):
+                print(f"{i} {setlist[i-1]}")
+        
+        print(f"Partitions: {counter}")
+                
     def function(self):
         '''Check if function by checking that everything in the domain has a unique mapping to the range'''
         for i in range(1, self.size):
@@ -109,5 +137,8 @@ if __name__ == "__main__":
     print(f"Function: {testingfunctions.function()}")
     print(f"Symmetric: {testingfunctions.symmetric()}")
     print(f"Transitive: {testingfunctions.transitive()}")
+    print(f"Equivalence: {testingfunctions.equivalence()}")
 
+    if(testingfunctions.equivalence()):
+        testingfunctions.printpartitions()
     
