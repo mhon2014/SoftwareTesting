@@ -79,11 +79,11 @@ class object:
         '''Check transitivity of the program using indices'''
         for a in range(1,self.size):
             for b in range(1, self.size):
-                if (not self.matrix[a][b]): #A & B
+                if (not self.matrix[a][b]): #A & B  skip indices that are 0
                     continue
 
                 for c in range(1,self.size):
-                    if(not self.matrix[b][c]): # B & C
+                    if(not self.matrix[b][c]): # B & C skip indices that are 0
                         continue
 
                     if (not self.matrix[a][c]):  # A & C
@@ -98,22 +98,24 @@ class object:
         return True
 
     def printpartitions(self):
+        '''Print partitions'''
         usedset = []
 
         setlist = [set() for i in range(1, self.size)]
 
-        counter = 0
+        counter = 0 #counter to count partitions
 
         for i in range(1,self.size):
             for j in range(1,self.size):
-                if(self.matrix[i][j] and j not in usedset):
+                if(self.matrix[i][j] and j not in usedset): #if indice is not in the 
                     counter += 1
                     usedset.append(j)
                     setlist[i-1].add(j)
 
-        if (counter < 10):
+        if (counter < 10): #if there's less than 10 partitions, print it out
             for i in range(1,self.size):
-                print(f"{i} {setlist[i-1]}")
+                if(len(setlist[i-1]) != 0):
+                    print(f"{i} {setlist[i-1]}")
         
         print(f"Partitions: {counter}")
                 
@@ -127,7 +129,7 @@ class object:
 
 if __name__ == "__main__":
 
-    #ssh mhon2014@code01.fit.edu '/udrive/faculty/kgallagher/public_html/sampleprogs/onto 15' | ./Assignment1Test.py
+    #ssh mhon2014@code01.fit.edu '/udrive/faculty/kgallagher/public_html/sampleprogs/executable | ./Assignment1Test.py
     
     testingfunctions = object()
 
