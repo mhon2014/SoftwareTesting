@@ -50,7 +50,7 @@ for ((II=0; II < ${#GENERATORS[@]}; ++II)) do
   for ((J = 0; J < ${#arguments[@]}; ++J)) do
 
     echo $user~/$sampleprogs${GENERATORS[II]} ${arguments[J]}
-    ssh $user $sampleprogs${GENERATORS[II]} ${arguments[J]} | $localprogram
+    ssh $user $sampleprogs${GENERATORS[II]} ${arguments[J]} | $user $oraclesprogs${GENERATORS[II]} ${arguments[J]} 
   done
 
 ##  ssh $TESTSITE $SAMPLEPROGS${GENERATORS[II]} $1 $2  | /usr/bin/time --verbose  ./${TARGETS[II]}  
