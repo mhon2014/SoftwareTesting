@@ -40,21 +40,29 @@ class blackbox:
             print("Error handling file.\n")
 
     def run(self):
-        self.isOneToOne = self.onetoone
-        self.isOnto = self.onto
-        self.isSymmetric = self.symmetric
-        self.isReflexive = self.reflexive
-        self.isTransitive = self.transitive
-        self.isFunction = self.function
+        '''Run the functions and save the states'''
+        self.isOneToOne = self.onetoone()
+        self.isOnto = self.onto()
+        self.isSymmetric = self.symmetric()
+        self.isReflexive = self.reflexive()
+        self.isTransitive = self.transitive()
+        self.isFunction = self.function()
+        self.isEquivalence = self.equivalence()
+
 
     def printResult(self):
-        print(f"One to one: {testingfunctions.onetoone()}")
-        print(f"Onto: {testingfunctions.onto()}")
-        print(f"Reflexive: {testingfunctions.reflexive()}")
-        print(f"Function: {testingfunctions.function()}")
-        print(f"Symmetric: {testingfunctions.symmetric()}")
-        print(f"Transitive: {testingfunctions.transitive()}")
-        print(f"Equivalence: {testingfunctions.equivalence()}")
+        '''Print result of of the object'''
+        print(f"One to one: {self.isOneToOne}")
+        print(f"Onto: {self.isOnto}")
+        print(f"Reflexive: {self.isReflexive}")
+        print(f"Function: {self.isFunction}")
+        print(f"Symmetric: {self.isSymmetric}")
+        print(f"Transitive: {self.isTransitive}")
+        print(f"Equivalence: {self.isEquivalence}")
+            #test equivalence
+        if(self.isEquivalence):
+          self.printpartitions()
+    
 
     def onetoone(self):
         '''Check if matrix is one to one counting the number of connections on the domain and range'''
@@ -121,7 +129,7 @@ class blackbox:
     def equivalence(self):
         '''Check equivalence by checking if reflexive, symmetric and transitive'''
         #variable to save the states
-        if not (self.reflexive() and self.symmetric() and self.transitive()):
+        if not (self.isReflexive and self.isSymmetric and self.isTransitive):
             return False
         return True
 
@@ -143,7 +151,7 @@ class blackbox:
 
         if (len(hashlist) < 25): #if there's less than 10 partitions, print it out
             for key in hashlist:
-                print(f"{key} {hashlist[key]}")
+                print(f"{hashlist[key]}")
         
         print(f"Partitions: {len(hashlist)}")
                 
@@ -164,9 +172,9 @@ if __name__ == "__main__":
     #create the object
     testingfunctions = blackbox()
 
+    #run the object
+    testingfunctions.run()
+
     #print out the result
     testingfunctions.printResult()
 
-    if(testingfunctions.equivalence()):
-        testingfunctions.printpartitions()
-    
