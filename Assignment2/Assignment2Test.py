@@ -6,55 +6,65 @@ from collections import defaultdict
 
 class blackbox:
     '''Matrix class with functions'''
-    def __init__(self):
-        try:
-            #get size and convert to int
-            self.size = int(sys.stdin.readline())+1
+    def __init__(self, noinput=False):
+        self.size = 0 if noinput else int(sys.stdin.readline())+1
+         
+        self.isOneToOne = False
+        self.isOnto = False
+        self.isSymmetric = False
+        self.isReflexive = False
+        self.isTransitive = False
+        self.isFunction = False
 
-            self.isOneToOne = False
-            self.isOnto = False
-            self.isSymmetric = False
-            self.isReflexive = False
-            self.isTransitive = False
-            self.isFunction = False
+        # try:
+            #get size and convert to int
+            # self.size = int(sys.stdin.readline())+1
 
             # input = sys.stdin.readlines()
             # print(input)
 
-            '''Matrix initialization'''
-            self.matrix = [[0 for i in range(self.size)] for j in range(self.size)]
+        '''Matrix initialization'''
+        self.matrix = [[0 for i in range(self.size)] for j in range(self.size)]
 
-            for line in sys.stdin.readlines():
-                x , y = line.split()
-                x = int(x)
-                y = int(y)
-                self.matrix[x][y] = 1
-                self.matrix[0][y] += 1
-                self.matrix[x][0] += 1
+        for line in sys.stdin.readlines():
+            x , y = line.split()
+            x = int(x)
+            y = int(y)
+            self.matrix[x][y] = 1
+            self.matrix[0][y] += 1
+            self.matrix[x][0] += 1
 
             #pretty = pd.DataFrame(self.matrix)
             #print(pretty)
             #print(pretty.drop(0).drop(columns=0))
 
-        except:
-            print("Error handling file.\n")
+        # except:
+        #     print("Error handling file.\n")
 
     def run(self):
-        self.isOneToOne = self.onetoone
-        self.isOnto = self.onto
-        self.isSymmetric = self.symmetric
-        self.isReflexive = self.reflexive
-        self.isTransitive = self.transitive
-        self.isFunction = self.function
+        '''Run the functions and save the states'''
+        self.isOneToOne = self.onetoone()
+        self.isOnto = self.onto()
+        self.isSymmetric = self.symmetric()
+        self.isReflexive = self.reflexive()
+        self.isTransitive = self.transitive()
+        self.isFunction = self.function()
+        self.isEquivalence = self.equivalence()
+
 
     def printResult(self):
-        print(f"One to one: {testingfunctions.onetoone()}")
-        print(f"Onto: {testingfunctions.onto()}")
-        print(f"Reflexive: {testingfunctions.reflexive()}")
-        print(f"Function: {testingfunctions.function()}")
-        print(f"Symmetric: {testingfunctions.symmetric()}")
-        print(f"Transitive: {testingfunctions.transitive()}")
-        print(f"Equivalence: {testingfunctions.equivalence()}")
+        '''Print result of of the object'''
+        print(f"One to one: {self.isOneToOne}")
+        print(f"Onto: {self.isOnto}")
+        print(f"Reflexive: {self.isReflexive}")
+        print(f"Function: {self.isFunction}")
+        print(f"Symmetric: {self.isSymmetric}")
+        print(f"Transitive: {self.isTransitive}")
+        print(f"Equivalence: {self.isEquivalence}")
+            #test equivalence
+        if(self.isEquivalence):
+          self.printpartitions()
+    
 
     def onetoone(self):
         '''Check if matrix is one to one counting the number of connections on the domain and range'''
@@ -121,7 +131,7 @@ class blackbox:
     def equivalence(self):
         '''Check equivalence by checking if reflexive, symmetric and transitive'''
         #variable to save the states
-        if not (self.reflexive() and self.symmetric() and self.transitive()):
+        if not (self.isReflexive and self.isSymmetric and self.isTransitive):
             return False
         return True
 
@@ -143,7 +153,7 @@ class blackbox:
 
         if (len(hashlist) < 25): #if there's less than 10 partitions, print it out
             for key in hashlist:
-                print(f"{key} {hashlist[key]}")
+                print(f"{hashlist[key]}")
         
         print(f"Partitions: {len(hashlist)}")
                 
@@ -162,11 +172,15 @@ if __name__ == "__main__":
     #code01 '/udrive/faculty/kgallagher/public_html/sampleprogs/sym 10' | ./Assignment1Test.py
     
     #create the object
-    testingfunctions = blackbox()
+    try:
+        testingfunctions = blackbox()
+
+    except ValueError:
+        testingfunctions = blackbox(noinput=True)
+
+    #run the object
+    testingfunctions.run()
 
     #print out the result
     testingfunctions.printResult()
 
-    if(testingfunctions.equivalence()):
-        testingfunctions.printpartitions()
-    
