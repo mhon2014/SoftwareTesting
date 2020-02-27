@@ -30,13 +30,14 @@ class blackbox:
             x , y = line.split()
             x = int(x)
             y = int(y)
-            self.matrix[x][y] = 1
-            self.matrix[0][y] += 1
-            self.matrix[x][0] += 1
+            if(not self.matrix[x][y]):
+                self.matrix[x][y] = 1
+                self.matrix[0][y] += 1
+                self.matrix[x][0] += 1
 
-            #pretty = pd.DataFrame(self.matrix)
-            #print(pretty)
-            #print(pretty.drop(0).drop(columns=0))
+        pretty = pd.DataFrame(self.matrix)
+        print(pretty)
+        print(pretty.drop(0).drop(columns=0))
 
         # except:
         #     print("Error handling file.\n")

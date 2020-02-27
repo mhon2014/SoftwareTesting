@@ -1,6 +1,8 @@
 
 #!/bin/bash
 
+> runtimes.txt
+
 USAGE="Usage: $0 "
 if [ "$#" == "0" ]; then
     echo "$USAGE" please enter Username
@@ -25,23 +27,25 @@ TARGETS=(
         )
 
 arguments=(
-            # 0
-            100
-            # 500
-)
+          0
+          10
+          25
+          )
 
-for i in $GENERATORS #for each file in the testpath
+
+for ((II = 0; II < ${#arguments[@]}; ++II)) #for each argument 
 do
-    for j in $arguments #for each argument I made
+    for JJ in $GENERATORS #for each file in the testpath
     do
-        sleep 1
         echo'' 
-        echo $TESTSITE $TESTPATH$i $j #just to check what I'm running
-	      echo $TESTPATH$i $j #ignore the ugly one liner on the next line
-        ssh $TESTSITE $TESTPATH$i $j | tee >(ssh $TESTSITE $TARGETPATH${TARGETS[0]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[1]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[2]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[3]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[4]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[5]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[6]}) >(gtime -f 'Local Process:\nElapsed time: %e' python3 Assignment2Test.py) >/dev/null
+        # echo $JJ`
+        echo $II
+	      echo $TESTPATH$JJ ${arguments[II]}   #ignore the ugly one liner on the next line
+        ssh $TESTSITE $TESTPATH$JJ $II | tee >(ssh $TESTSITE $TARGETPATH${TARGETS[0]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[1]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[2]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[3]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[4]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[5]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[6]}) >(python3 Assignment2Test.py) >/dev/null
         echo''
         sleep 1
     done
 done
+
 
 #http://man7.org/linux/man-pages/man1/time.1.html gtime -f
