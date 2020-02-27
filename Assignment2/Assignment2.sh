@@ -39,7 +39,22 @@ do
         # echo $JJ`
         echo $II
 	      echo $TESTPATH$JJ ${arguments[II]}   #ignore the ugly one liner on the next line
-        ssh $TESTSITE $TESTPATH$JJ $II | tee >(ssh $TESTSITE $TARGETPATH${TARGETS[0]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[1]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[2]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[3]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[4]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[5]}) >(ssh $TESTSITE $TARGETPATH${TARGETS[6]}) >(python3 Assignment2Test.py) >/dev/null
+        ssh $TESTSITE $TESTPATH$JJ $II | tee >(
+          ssh $TESTSITE $TARGETPATH${TARGETS[0]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[1]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[2]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[3]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[4]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[5]}
+          ) >(
+            ssh $TESTSITE $TARGETPATH${TARGETS[6]}
+          ) >(
+            python3 Assignment2Test.py) >/dev/null
         echo''
         sleep 1
     done
