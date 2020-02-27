@@ -1,8 +1,6 @@
 
 #!/bin/bash
 
-> runtimes.txt
-
 USAGE="Usage: $0 "
 if [ "$#" == "0" ]; then
     echo "$USAGE" please enter Username
