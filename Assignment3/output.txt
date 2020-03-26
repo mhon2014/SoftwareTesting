@@ -1,0 +1,420 @@
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is not onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+[1]
+Partitions: 1
+
+  Is Equivalence class
+1 
+1 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is not onto
+
+Is one to one
+
+Is onto
+
+Is one to one
+One to one: True
+Onto: True
+Reflexive: True
+Function: True
+Symmetric: True
+Transitive: True
+Equivalence: True
+Partitions: 0
+
+Is not onto
+
+Is one to one
+
+  Is Equivalence class
+0 classes 
+
+Is transitive
+
+Is symmetric
+
+Is function
+
+Is reflexive
+
+Is not onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
+
+Is not onto
+
+Is one to one
