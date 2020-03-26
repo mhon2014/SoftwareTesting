@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
-import pandas as pd
+# import pandas as pd
 from collections import defaultdict
 
 class blackbox:
